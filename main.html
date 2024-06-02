@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>VR Car Drive Simulation</title>
+
+        <meta http-equiv="Access-Control-Allow-Origin" content="*" />
+        
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script
+          src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+        <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+        <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+      
+    
+    </head>
+    <body>
+        <a-scene id="scene" background="color:lightblue">
+            <a-assets>
+                <a-asset-item id="city" src="./assets/low_poly_city/scene.gltf"></a-asset-item>
+                <a-asset-item id="wheel" src="./assets/steering_wheel/scene.gltf"></a-asset-item>
+            </a-assets>
+           <a-entity id="citySet" gltf-model="#city" position="10 -2.6 -140" rotation="0 90 0"></a-entity>
+           
+           <a-box id="b1" material="height:400;metalness:0.34" color="white" geometry="depth:400;height:50;width:5" position="-76 6 -190"></a-box>
+           <a-box id="b1" material="height:400;metalness:0.34" color="white" geometry="depth:400;height:50;width:5" position="76 6 -190"></a-box>
+           <a-box id="b1" material="height:400;metalness:0.34" color="white" geometry="depth:5;height:50;width:200" position="0 -7 5"></a-box>
+           <a-box id="b1" material="height:400;metalness:0.34" color="white" geometry="depth:5;height:50;width:200" position="0 -7 -350"></a-box>>
+        <a-entity id="camera" camera="" position="0 1.6 0" rotation="0 0 0" look-controls="pointerLockEnabled:false">
+            <a-entity id="controlwheel" position="0.13 -0.12 -0.16" gltf-model="#wheel" scale="0.001 0.001 0.001" rotation="0 0 0"></a-entity>
+            <a-box id="controlbrake" src="./assets/break.png" color="gray" position="-0.4 -0.2 -0.3" scale="0.05 0.05 0.001" rotation="0 0 0"></a-box>
+            <a-box id="controlacc" src="./assets/acc.png" color="gray" position="-0.3 -0.2 -0.3" scale="0.05 0.1 0.001" rotation="0 0 0"></a-box>
+        </a-entity>       
+        </a-scene>
+    </body>
+
+</html>
